@@ -1,0 +1,27 @@
+{
+  "name": "hqs-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeadQuarters-Comics/hqs-api.git"
+  },
+  "keywords": [],
+  "author": "Jwmffreitas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HeadQuarters-Comics/hqs-api/issues"
+  },
+  "homepage": "https://github.com/HeadQuarters-Comics/hqs-api#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "pg": "^8.7.1"
+  }
+}
