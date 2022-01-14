@@ -13,6 +13,18 @@ module.exports = {
             console.log(`Error to get all hqs! ${error}`)
         }
     },
+
+    async releases(req, res) {
+        try{
+            await database.connect()
+            const result = await (await database.query("select * from public.hqs order by add_date desc limit 5;")).rows
+            console.table(result)
+            return res.status(200).json(result)
+        }
+        catch(error){
+            console.log(`Error to get hqs! ${error}`)
+        }
+    },
     
     //async create(req, res) {
     //    const {username, password} = req.body;
