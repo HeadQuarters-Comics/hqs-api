@@ -12,7 +12,7 @@ const HQs = require('./controllers/hq-controller')
 routes.get('/api/hqs/', HQs.index)
 routes.get('/api/hqs/releases', HQs.releases)
 routes.get('/api/hqs/publishers', HQs.publishers)
-//routes.delete('/api/produtos/:id', Produto.delete)
+routes.get('/api/hqs/:publisher', HQs.filtered)
 //routes.put('/api/produtos', Produto.update)
 
 module.exports = routes

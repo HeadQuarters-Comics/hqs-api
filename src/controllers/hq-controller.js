@@ -38,4 +38,17 @@ module.exports = {
         }
     },
 
+    async filtered(req, res) {
+        const {publisher} = req.params
+        try{
+            await database.connect()
+            const result = await (await database.query(`select * from public.hqs where publisher = '${publisher.toUpperCase()}';`)).rows
+            console.table(result)
+            return res.status(200).json(result)
+        }
+        catch(error){
+            console.log(`Error to get HQs! ${error}`)
+        }
+    },
+
 }
