@@ -4,7 +4,7 @@ const database = require('../../db')
 module.exports = {
     async index(req, res) {
         try{
-            await database.connect()
+            //await database.connect()
             const result = await (await database.query("select * from hqs")).rows
             console.table(result)
             return res.status(200).json(result)
@@ -16,7 +16,7 @@ module.exports = {
 
     async releases(req, res) {
         try{
-            await database.connect()
+            //await database.connect()
             const result = await (await database.query("select * from public.hqs order by add_date desc limit 5;")).rows
             console.table(result)
             return res.status(200).json(result)
@@ -28,7 +28,7 @@ module.exports = {
 
     async publishers(req, res) {
         try{
-            await database.connect()
+            //await database.connect()
             const result = await (await database.query("select distinct publisher from public.hqs")).rows
             console.table(result)
             return res.status(200).json(result)
@@ -41,7 +41,7 @@ module.exports = {
     async filtered(req, res) {
         const {publisher} = req.params
         try{
-            await database.connect()
+            //await database.connect()
             const result = await (await database.query(`select * from public.hqs where publisher = '${publisher.toUpperCase()}';`)).rows
             console.table(result)
             return res.status(200).json(result)
